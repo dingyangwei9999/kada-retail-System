@@ -25,7 +25,7 @@ gulp.task('autoRefresh',function(){
 		proxy:'http://localhost/retail-system/',
 		//port:8080,//自定义端口
 		//监听文件修改，自动刷新浏览器
-		files:['web/html/*.html','web/index.html','src/js/*.js']
+		files:['web/*.html','web/index.html','src/js/*.js']
 	});
 
 	//监听sass文件修改，执行编译sass文件任务
