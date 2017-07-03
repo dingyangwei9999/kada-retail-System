@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../libs/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./datagrid.css">
+
+        <script type="text/javascript" src="./src/libs/angular/angular.min.js"></script>
+        <script type="text/javascript" src="./src/libs/angular-ui/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="./src/libs/jquery/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="./src/common/common.js"></script> 
+        <script type="text/javascript" src="./src/html/"></script>               
+    </head>
+    <body ng-app="mainApp" ng-controller="mainController">
+        <div data-ui-view=""></div>>
+
+        <script type="text/javascript">
+            var mainApp = angular.module('mainApp', []);
+			
+			mainApp.config(function($controllerProvider){
+				mainApp.register = {
+					controller: $controllerProvider.register;
+				};
+			});
+            mainApp.controller('mainController', ['$scope', '$http', function($scope, $http){
+            }])
+            //配置路由映射表
+      		mainApp.config(function ($stateProvider, $urlRouterProvider) {
+            	$stateProvider.state('dkstate', {
+	                url: '/productionLib',
+	                templateUrl: 'dk2.html?_' + Math.random(),
+	                controller: 'dk2Controller'
+            })
+        })
+        </script>
+    </body>
+</html>
