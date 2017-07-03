@@ -34,12 +34,15 @@
         });
         myApp.controller('classify', function ($scope, $stateParams) {
             $scope.name = 'fdasfdslafdsal';
-            // console.log($stateParams.id);
+            $scope.classify = '';
+			$scope.saveClass = function() {
+				console.log($scope.classify)
+		    };
+
+
         });
 
-        myApp.controller('classifyController',function($scope){
-        	$scope.name = "a";
-        });
+
 	</script>
 </body>
 </html>	
