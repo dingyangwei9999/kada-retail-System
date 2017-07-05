@@ -57,7 +57,7 @@ globalapp.config(["$httpProvider", function ($httpProvider) {
                 $('.sk-spinner-three-bounce.sk-spinner, .main-mask').removeClass('item-hidden');
                 config.url = $.basurl() + config.url;
                 config.params = $.extend(config.params, { '_': Math.random() });
-                console.log(config);
+                // console.log(config);
                 return config || $q.when(config);
             },
             'requestError': function (rejection) {

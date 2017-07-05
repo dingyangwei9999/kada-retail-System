@@ -5,8 +5,8 @@
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/classifypage.css">
-
 	<link rel="stylesheet" type="text/css" href="../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../libs/jquery/jquery-confirm/jquery-confirm.css">
 
 
 	<script src="../libs/jquery/jquery-2.1.1.min.js"></script>
@@ -14,20 +14,19 @@
 	<script src="../libs/angular/angular.min.js"></script>
 	<script src="../libs/angular/angular.global.js"></script>
     <script src="../libs/angular-ui/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src='../libs/jquery/jquery-confirm/jquery-confirm.js'></script>
 	<script src="js/classify.js"></script>
+    <script type="text/javascript" src='js/cashier.js'></script>
+    <script type="text/javascript" src='js/shouyin.js'></script>
+
 
 </head>
 <body ng-app="myApp">
-	<div class="indexheader">
-		<h3>丢你啊扑街零售系统</h3>
-	</div>
+
 	<div class="indexbody" >
 		<div class="indexleft" ng-controller = 'leftController'>
 			<span class="glyphicon glyphicon-list" aria-hidden="true" id="openBtn"></span>
-
 			<div class="list_title">功能列表&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-list" aria-hidden="true" ng-click="lefthide()" id="hideBtn"></span></div>
-
-			
 			<ul class="navlist">
 			
 				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>采购管理</a></li>
@@ -40,13 +39,11 @@
 		</div>
 		<div class="content">
 	    	<div data-ui-view=""></div>
+
 		</div>
 	</div>
 
 	<script type="text/javascript">
-		var myApp = angular.module("myApp", ['ui.router','globalapp','classifyApp']);
-
-		
 		myApp.controller('leftController',['$scope',function($scope){
 			// $('#hideBtn')
 			$scope.lefthide = function(){
@@ -58,18 +55,27 @@
 
 		    };
 		}])
+		var myApp = angular.module("myApp", ['ui.router','globalapp','cashierApp','classifyApp','shouyinApp']);
         myApp.config(function ($stateProvider, $urlRouterProvider) {
-   
        		$stateProvider
 	           .state("classifyManage", {
 	               url: "/classify",//当 url 为#/pagetab
 	               templateUrl: "classify.html?_" + Math.random(),
 	               controller: 'classify'
-	           })
-	       
-        });
-
-
+	            })
+				.state("fdsafdsa", {
+			               url: "/cashier",//当 url 为#/pagetab
+			               templateUrl: "cashier.html?_" + Math.random(),
+			               controller: 'cashier'
+			           })
+				.state("clafdsa",{
+			               url: "/shouyin",//当 url 为#/pagetab
+			               templateUrl: "shouyin.html?_" + Math.random(),
+			               controller: 'shouyin'
+		           })			           	           
+		        })
+				
 	</script>
 </body>
 </html>	
+

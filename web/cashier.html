@@ -1,0 +1,41 @@
+<div>
+	<div id="methods">
+		<!-- <button type="submit" class="cashierSearch btn btn-default" ng-click="cashMoney()" >结算记录</button> -->
+		<div class="div1">
+			<form class="form-inline">
+				<div class="form-group">
+					<select class="form-control" ng-module>
+						<option>全部分类</option>
+						<option>大沟头</option>
+						<option>大沟头的儿子</option>
+					</select>
+					<select class="form-control">
+						<option>全部供应商</option>
+						<option>大沟头</option>
+						<option>大沟头的儿子</option>
+					</select>
+					<label for="exampleInputName2"></label>
+					<input type="text" class="form-control" id="exampleInputName2" placeholder="商品名称" ng-module="classifyName">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputName2"></label>
+					<input type="text" class="form-control" id="exampleInputName2" placeholder="条码" ng-focus="searchData()"  ng-model="barCode">
+				</div>
+				<button type="submit" class="cashierSearch btn btn-default">查询</button>
+			</form>
+		</div>
+	</div>
+	<table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th ng-repeat="(key,value ) in cashierData[0]" ng-bind="key"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='obj in cashierData' >
+			<!-- <th scope="row" ng-bind="$index+1" ></th> -->
+			<td ng-repeat="(index,value) in obj" ng-bind="value"></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
