@@ -5,7 +5,7 @@ supplier_js.controller('supplier', ['$scope', '$stateParams','$http',function ($
 	$('.supplier_aside').hide()
 
 	$scope.formData=[];
-	$http.post(erp.localhost+'fromSupplier').success(function(response){
+	$http.post(erp.localhost1+'fromSupplier').success(function(response){
 		console.log(response)
 		$scope.formData = response;
 	})
@@ -41,11 +41,11 @@ supplier_js.controller('supplier', ['$scope', '$stateParams','$http',function ($
 
 		$http({
 			method:'POST',
-			url:erp.localhost+'ToSupplier',
+			url:erp.localhost1+'ToSupplier',
 			params:{data:data},
 		}).success(function(response){
 			$.alert(response)
-			$http.post(erp.localhost+'fromSupplier').success(function(response){
+			$http.post(erp.localhost1+'fromSupplier').success(function(response){
 				$scope.formData = response;
 			})
 			$scope.supplierNumber=''
@@ -82,7 +82,7 @@ supplier_js.controller('supplier', ['$scope', '$stateParams','$http',function ($
 
 		$http({
 			method:'POST',
-			url:erp.localhost+'DelSupplier',
+			url:erp.localhost1+'DelSupplier',
 			params:{data:data},
 		}).success(function(response){
 			console.log('dellllllllllllllll')
@@ -94,7 +94,7 @@ supplier_js.controller('supplier', ['$scope', '$stateParams','$http',function ($
 			$scope.supplierAdress2=''
 			$scope.supplierRemarks2=''
 			$.alert(response)
-			$http.post(erp.localhost+'fromSupplier').success(function(response){
+			$http.post(erp.localhost1+'fromSupplier').success(function(response){
 				$scope.formData = response;
 			})	
 		})
@@ -114,10 +114,10 @@ supplier_js.controller('supplier', ['$scope', '$stateParams','$http',function ($
 		}
 		$http({
 			method:'POST',
-			url:erp.localhost+'AlterSupplier',
+			url:erp.localhost1+'AlterSupplier',
 			params:{data:data},
 		}).success(function(response){
-			$http.post(erp.localhost+'fromSupplier').success(function(response){
+			$http.post(erp.localhost1+'fromSupplier').success(function(response){
 				$scope.formData = response;
 			})
 			$.alert(response)
@@ -129,7 +129,7 @@ supplier_js.controller('supplier', ['$scope', '$stateParams','$http',function ($
 		$scope.queryWord
 		$http({
 			method:'POST',
-			url:erp.localhost+'fromSupplier',
+			url:erp.localhost1+'fromSupplier',
 			params:{data:$scope.queryWord},
 		}).success(function(response){
 			$scope.formData =response

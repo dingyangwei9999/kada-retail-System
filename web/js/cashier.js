@@ -1,7 +1,7 @@
 var cashierApp = angular.module('cashierApp',[]);
 
 cashierApp.controller('cashier', ['$scope', '$stateParams','$http',function($scope, $stateParams,$http) {
-	$http.post('http://localhost:8888/cashierData').then(function(response){
+	$http.post(erp.localhost+'cashierData').then(function(response){
 		$scope.cashierData = response.data;
 		console.log(response.data)     
 	}) 
@@ -13,7 +13,7 @@ cashierApp.controller('cashier', ['$scope', '$stateParams','$http',function($sco
 		let cashierName = $scope.barCode;
 		$http({
 			method:"POST",
-			url:'http://localhost:8888/Data',
+			url:erp.localhost+'Data',
 			params:{'cashierName':cashierName}
 		}).then(function(response){
 			console.log(response)

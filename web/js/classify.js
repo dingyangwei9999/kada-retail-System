@@ -15,12 +15,12 @@ classifyApp.controller('classify', ['$scope', '$http','$stateParams', function (
 	$scope.dataset2 = [];
 	$scope.add_condition2 = false;
 
-	$http.get('http://localhost:8888/getdata').success(function(response){
+	$http.get(erp.localhost+'getdata').success(function(response){
 		$scope.dataset = response;
 		// console.log('成功')
 		// console.log($scope.dataset)
 			
-		$http.get('http://localhost:8888/getunit').success(function(response){
+		$http.get(erp.localhost+'getunit').success(function(response){
 			$scope.dataset2 = response;
 			console.log('成功')
 		})
@@ -38,7 +38,7 @@ classifyApp.controller('classify', ['$scope', '$http','$stateParams', function (
     	let data={classifyname:$scope.classify};
     	$http({
 			method:'POST',
-			url:'http://localhost:8888/addClassify',
+			url:erp.localhost+'addClassify',
 			params:{data:data},
 		}).success(function(response){
 			console.log(response)
@@ -68,7 +68,7 @@ classifyApp.controller('classify', ['$scope', '$http','$stateParams', function (
 		let data = {old:olddata,new:newdata};
 		$http({
 			method:'POST',
-			url:'http://localhost:8888/changeClassify',
+			url:erp.localhost+'changeClassify',
 			params:{data:data},
 		}).success(function(response){
 			console.log('1111111')
@@ -93,7 +93,7 @@ classifyApp.controller('classify', ['$scope', '$http','$stateParams', function (
 
 	 	$http({
 			method:'POST',
-			url:'http://localhost:8888/delClassify',
+			url:erp.localhost+'delClassify',
 			params:{data:delClassify},
 		}).success(function(response){
 			console.log(response)
@@ -120,7 +120,7 @@ classifyApp.controller('classify', ['$scope', '$http','$stateParams', function (
     	let data={unitname:$scope.unit};
     	$http({
 			method:'POST',
-			url:'http://localhost:8888/addUnit',
+			url:erp.localhost+'addUnit',
 			params:{data:data},
 		}).success(function(response){
 			console.log(response)
@@ -137,7 +137,7 @@ classifyApp.controller('classify', ['$scope', '$http','$stateParams', function (
 	    {  
 	 	$http({
 			method:'POST',
-			url:'http://localhost:8888/delUnit',
+			url:erp.localhost+'delUnit',
 			params:{data:delUint},
 		}).success(function(response){
 			console.log(response)

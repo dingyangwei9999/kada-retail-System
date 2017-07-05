@@ -9,19 +9,19 @@ var purApp = angular.module("purApp", ["globalapp"]);
         		};
 
         		//获取采购列表
-        		$.post('http://localhost:8888/getProducts').success(function(res){
+        		$.post(erp.localhost+'getProducts').success(function(res){
 							console.log('ssss',res)
 							$scope.data = res.data;
 												
 					})
         		//获取商品单位
-        		$.post('http://localhost:8888/classify').success(function(res){
+        		$.post(erp.localhost+'classify').success(function(res){
 								console.log('unit',res)
 							$scope.dataunit = res.data;
 							console.log($scope.dataunit)							
 					})
         		//获取商品类型
-        		$.post('http://localhost:8888/goodstype').success(function(res){
+        		$.post(erp.localhost+'goodstype').success(function(res){
 								console.log('goodstype',res)
 							$scope.datatype = res.data;
 							// console.log($scope.dataunit)							
@@ -52,7 +52,7 @@ var purApp = angular.module("purApp", ["globalapp"]);
 
 		        			$http({
 		        					method:'post',
-		        					url:'http://localhost:8888/addProducts',
+		        					url:erp.localhost+'addProducts',
 		        					// params:{"goodsunit":"23","goodsnum":"2"},
 		        					data:obj,
 		        				}).then(function(response){
@@ -70,7 +70,7 @@ var purApp = angular.module("purApp", ["globalapp"]);
 
         				$http({
 	        					method:'post',
-	        					url:'http://localhost:8888/delProducts',
+	        					url:erp.localhost+'delProducts',
 	        					// params:{"goodsunit":"23","goodsnum":"2"},
 	        					data:{"proid":$scope.data[$index].proid},
 	        				}).then(function(response){
@@ -83,7 +83,7 @@ var purApp = angular.module("purApp", ["globalapp"]);
         			console.log(7)
         			$http({
         					method:'post',
-        					url:'http://localhost:8888/getProducts',
+        					url:erp.localhost+'getProducts',
         					// params:{"goodsunit":"23","goodsnum":"2"},
         					data:{"proid":$scope.data[$index].proid},
         				}).then(function(response){
@@ -120,7 +120,7 @@ var purApp = angular.module("purApp", ["globalapp"]);
 
 					$http({
 	        					method:'post',
-	        					url:'http://localhost:8888/changeProducts',
+	        					url:erp.localhost+'changeProducts',
 	        					// params:{"goodsunit":"23","goodsnum":"2"},
 	        					data:obj,
 	        				}).then(function(response){
