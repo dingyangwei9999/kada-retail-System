@@ -1,0 +1,43 @@
+
+
+html {
+    font-family: 'Microsoft YaHei',"Comic Sans MS","Ó×Ô²","ºÚÌå",sans-serif;
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+    height:100%;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Microsoft YaHei',"Comic Sans MS","Ó×Ô²","ºÚÌå",sans-serif;
+    height:100%;
+    padding: 0;
+    margin: 0;
+}
+
+*{outline: none;box-sizing:border-box;}
+.clearfix:after{
+    content:"";
+    clear:both;
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+}
+
+ul{padding:0; margin:0;}
+li{list-style:none;}
+
+/*a*/
+a{text-decoration:none}
+a:hover{text-decoration:none;}
+a:active{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:link{text-decoration:none;}
+
+
+.activeopa{opacity:0.9!important}
+.activebgd{background:rgba(238,238,238,0.5)!important}

@@ -1,0 +1,136 @@
+<div class="purchasing_box" ng-app="purApp">
+	
+	<div class="pur_top clearfix">
+		 <div class="pur_top_left">
+				<div class="btn-group" role="group" aria-label="...">
+					  <button type="button" class="btn btn-default purchase_products" ng-click="purpro()">{{addpur.addpurs}}</button>
+					  <button type="button" class="btn btn-default" disabled>{{addpur.addsome}}</button>
+					  <button type="button" class="btn btn-default" disabled>{{addpur.outsome}}</button>
+				</div>				
+		</div>
+
+		<div class="pur_top_right">
+				<input type="text" placeholder="产品搜索" class="pur_search" ng-model="search">
+				 <button type="button" class="btn btn-default purchase_products">搜索</button>
+		</div>	
+
+	</div>
+	<div class="pur_concent">
+		<table class="table table-hover">
+	      <thead>
+	        <tr>
+	          <!-- <th>操作</th> -->
+	          <th>序号</th>
+	          <th>商品编号</th>
+	          <th>商品名称</th>
+	          <th>商品类型</th>
+	          <th>数量</th>
+	          <th>单位</th>
+	          <th>单价</th>
+	          <th>总价</th>
+	          <th>供货商</th>
+	          <th>操作</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr ng-repeat="(key,value) in data | filter:search:false">
+	          <!-- <th>编辑</th> -->
+	          <td ng-bind="value.indexid"></td>
+	          <td>{{value.proid}}</td>
+	          <td>{{value.goodstitle}}</td>
+	          <td>{{value.goodstype}}</td>
+	          <td>{{value.goodsnum}}</td>
+	          <td>{{value.goodsunit}}</td>
+	          <td>{{value.buyprice}}</td>
+	          <td>{{value.totalprice}}</td>
+	          <td>{{value.suppliername}}</td>
+	          <th><span ng-click="delgoods($index)">删除</span>&nbsp;&nbsp;<span ng-click="edit($index)">编辑</span></th>
+	          <!-- <th></th> -->
+	        </tr>
+	       <!--  <tr>
+	          <th>编辑</th>
+	          <td></td>
+	          <td></td>
+	          <td></td>
+	          <td></td>
+	          <td></td>
+	          <td></td>
+	          <td></td>
+	          <td></td>
+	          <td></td>
+	        </tr> -->
+	      
+	      </tbody>
+	    </table>
+		<div class="concent_right" ng-show="conshow">
+			<div class="input-group">
+			      <div class="input-group-addon spbh" style="height:40px;">商品编号</div>
+			      <input type="text" class="form-control" id="" placeholder="商品编号" ng-model="num">
+			      <div class="input-group-addon sjsc" ng-click="sjsc()" style="height:40px;">随机生成</div>		    
+			</div><br>
+			<div class="input-group">
+			      <div class="input-group-addon spbh">商品名称</div>
+			      <input type="text" class="form-control" id="" placeholder="商品名称" ng-model="spmc">
+			</div><br>
+			<select ng-init="goodstype = '商品类型'" class="form-control" ng-model="goodstype" >
+				  <option ng-repeat="value in datatype">{{value.goodstype}}</option>
+			</select><br>
+			<div class="input-group">
+			      <div class="input-group-addon spbh" >数量</div>
+			      <input type="text" class="form-control" id="goodsnum" placeholder="商品数量" ng-model="goodsnum">
+				  <select class="form-control" ng-model="goodsunit" id="goodsunit" ng-init="goodsunit='个'" >
+					  <option ng-repeat="value in dataunit">{{value.unit}}</option>
+			      </select>
+			</div><br>
+			<div class="input-group">
+			      <div class="input-group-addon spbh" >单价</div>
+			      <input type="text" class="form-control" id="" placeholder="进货价" ng-model="buyprice">
+			      <div class="input-group-addon spbh" >总价</div>
+			      <input type="text" class="form-control" id="" placeholder="总价" ng-model="totalprice">
+			      <div class="input-group-addon spbh" >供货商</div>
+			      <input type="text" class="form-control" id="" placeholder="供货商" ng-model="suppliername">
+			</div><br>
+			<div class="buttonbox">
+				<button type="button" class="btn btn-success test" ng-click="save()">保存</button>
+				<button type="button" class="btn btn-warning test" ng-click="purpro()">取消</button>
+			</div>
+		</div>
+
+		<div class="concent_right" ng-show="conshows">
+			<div class="input-group">
+			      <div class="input-group-addon spbh" style="height:40px;">商品编号</div>
+			      <input type="text" class="form-control" id="" placeholder="商品编号" ng-model="nums">
+			      <div class="input-group-addon sjsc" ng-click="sjsc()" style="height:40px;">随机生成</div>		    
+			</div><br>
+			<div class="input-group">
+			      <div class="input-group-addon spbh">商品名称</div>
+			      <input type="text" class="form-control" id="" placeholder="商品名称" ng-model="spmcs">
+			</div><br>
+			<select ng-init="goodstype = '商品类型'" class="form-control" ng-model="goodstypes" >
+				  <option ng-repeat="value in datatype">{{value.goodstype}}</option>
+			</select><br>
+			<div class="input-group">
+			      <div class="input-group-addon spbh" >数量</div>
+			      <input type="text" class="form-control" id="goodsnum" placeholder="商品数量" ng-model="goodsnums">
+				  <select class="form-control" ng-model="goodsunit" id="goodsunit" ng-init="goodsunit='个'" >
+					  <option ng-repeat="value in dataunit">{{value.unit}}</option>
+			      </select>
+			</div><br>
+			<div class="input-group">
+			      <div class="input-group-addon spbh" >单价</div>
+			      <input type="text" class="form-control" id="" placeholder="进货价" ng-model="buyprices">
+			      <div class="input-group-addon spbh" >总价</div>
+			      <input type="text" class="form-control" id="" placeholder="总价" ng-model="totalprices">
+			      <div class="input-group-addon spbh" >供货商</div>
+			      <input type="text" class="form-control" id="" placeholder="供货商" ng-model="suppliernames">
+			</div><br>
+			<div class="buttonbox">
+				<button type="button" class="btn btn-success test" ng-click="saves()">保存</button>
+				<button type="button" class="btn btn-warning test" ng-click="purpros()">取消</button>
+			</div>
+		</div>
+
+
+	</div>
+		
+</div>
