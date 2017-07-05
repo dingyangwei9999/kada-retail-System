@@ -1,7 +1,7 @@
 var lhapp = angular.module('lhApp',[])
 
 lhapp.controller('lhController',['$scope','$http',function($scope,$http){
-	$http.post('http://localhost:8888/lhgetData').then(function(response){
+	$http.post(erp.localhost + 'lhgetData').then(function(response){
 		console.log(response.data)
 		$scope.data = response.data
 	})
@@ -15,7 +15,7 @@ lhapp.controller('lhController',['$scope','$http',function($scope,$http){
 
 		$http({
 			method:'POST',
-			url:'http://localhost:8888/lhsearchData',
+			url:erp.localhost + 'lhsearchData',
 			params:{'data':objs}
 		}).then(function(response){
 			$scope.data = response.data;

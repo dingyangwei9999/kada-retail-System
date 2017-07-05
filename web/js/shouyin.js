@@ -27,7 +27,7 @@ shouyinApp.controller('shouyin', ['$scope', '$stateParams','$http',function($sco
 		if(cashierName && stateShou){
 			$http({
 				method:"POST",
-				url:'http://localhost:8888/Data',
+				url:erp.localhost+'Data',
 				params:{'barcode':cashierName}
 			}).then(function(response){
 				console.log(response.data[0])

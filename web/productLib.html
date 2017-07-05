@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="css/productLib.css">
+<div class="productlib-box">
+<div>
+	<!-- <button type="button" class="btn btn-info" ng-click="addData()">导入</button> -->
+</div>
+<table class="table table-bordered table-hover">
+	<thead>
+	<tr>
+		<th ng-repeat="(key, value) in dataset[0]" ng-bind="key"></th>
+		<th>修改</th>
+		<th>删除</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="obj in dataset">
+			<td ng-repeat="(key, value) in obj" ng-bind="value" ng-model="value"></td>
+			<td><button type="button" class="btn btn-info"  ng-click="editInfo(obj)">修改库存</button></td>
+			<td><!-- <button type="button" class="btn btn-info" ng-click="addData(obj)">添加到产品库</button> --><button type="button" class="btn btn-info" ng-click="delData(obj)">删除</button></td>
+		</tr>
+	</tbody>
+</table>
+	<div class="productShade">
+		<div>
+			库存<input type="text" ng-model="editInput">
+			总价<input type="text" ng-model="totalprice">
+			<button ng-click="closeShade()">关闭</button>
+			<button ng-click="btnConfirm()">确定</button>
+			</div>
+	</div>
+</div>
