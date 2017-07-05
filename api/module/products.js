@@ -1,5 +1,5 @@
 var bodyParser = require('body-parser');
-var mysqlDB = require('./mysql-module')
+// var mysqlDB = require('./mysql-module')
 ;
 var mysqldagou = require('./dagouMql')
 

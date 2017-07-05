@@ -1,7 +1,7 @@
 var path = require('path');
 
 var bodyParser = require('body-parser');
-var db = require('../module/mysql-module.js');
+// var db = require('../module/mysql-module.js');
 var apiResult = require('../module/apiResult.module.js');
 
 
