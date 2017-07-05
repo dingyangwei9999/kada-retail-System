@@ -1,0 +1,52 @@
+<div class="delivery-container">
+	<div id="methods">
+		<div class="div1">
+			<form class="form-inline">
+				<div class="form-group">
+					<select class="form-control">
+						<option>全部分类</option>
+						<option>大沟头</option>
+						<option>大沟头的儿子</option>
+					</select>
+					<select class="form-control">
+						<option>全部供应商</option>
+						<option>大沟头</option>
+						<option>大沟头的儿子</option>
+					</select>
+					<label for="exampleInputName2"></label>
+					<input type="text" class="form-control" id="exampleInputName2" placeholder="商品名称" ng-model="name">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputName2"></label>
+					<input type="text" class="form-control" id="exampleInputName2" placeholder="条码" ng-model="num">
+				</div>
+				<button class="btn btn-default" ng-click="search()">查询</button>
+			</form>
+		</div>
+	</div>
+	<div class="biaoge">
+		<table class="table table-bordered table-hover">
+	      <thead>
+	        <tr>
+	          <th>序号</th>
+	          <th>条码</th>
+	          <th>品名</th>
+	          <th>供应商</th>
+	          <th>单位</th>
+	          <th>类别</th>
+	          <th>进货价</th>
+	          <th>零售价</th>
+	          <th>已售数量</th>
+	          <th>总价</th>
+	          <th>库存数量</th>
+	          <th>创建日期</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr ng-repeat="obj in data">
+	          <td ng-repeat="(key, value) in obj" ng-bind="value"></td>
+	        </tr>
+	      </tbody>
+	    </table>
+    </div>
+</div>

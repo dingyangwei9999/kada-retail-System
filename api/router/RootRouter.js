@@ -1,5 +1,6 @@
 var path = require('path');
 
+var deliveryRouter =require('./deliveryRouter.js')
 
 exports.Register = function(express){
     var app = express();
@@ -19,7 +20,8 @@ exports.Register = function(express){
         response.end();
     })
 
-
+    deliveryRouter.Register(app)
+    
     app.use(express.static(path.join(path.resolve(__dirname, '../../'), '/')));
 
     return app;
