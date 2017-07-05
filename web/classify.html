@@ -1,6 +1,80 @@
-<div>
-    <h1>这是分类管理页面</h1>
-    <input type="text" ng-model="classify">
-    <button ng-click="saveClass()">保存</button>
-    <h3>{{classify}}</h3>
+<div class="classifypage">
+    <div class="classifyArea">
+        <h3 class="title">商品分类管理</h3>
+
+        <p style="position: relative;"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已创建的&nbsp;分类&nbsp;列表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"style="position: relative; left: 120px"  ng-click="addShow()"></span>
+
+        <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" ng-click="closeTable1()" style="position: relative; left: 135px; top:4px;"></span>
+        </p>
+
+        <table class="table table-hover" id="table1">
+            <thead>
+            </thead>
+            <tbody>
+                <tr ng-repeat="obj in dataset">
+                    <th><span>{{obj.classifyname}}</span><b><span class="glyphicon glyphicon-pencil" aria-hidden="true"  style="color: grey;" ng-click="changeShow($event)"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: #c00;" ng-click="deleate($event)"></span></b></th>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <div class="addWindow" ng-show="add_condition";>
+            <b>请填写新增类型</b>
+            <input type="text" class="form-control" style="width:300px;"  ng-model="classify">
+            <button ng-click="addWindow_save()" type="button" class="btn btn-primary" style="width: 80px;" > 保存 </button>
+            <button type="button" class="btn btn-danger" style="margin-left: 50px; width: 80px;"  ng-click="addWindow_close()">取消</button>
+        </div>
+
+
+        <div class="changeWindow" ng-show="change_condition";>
+            <b>修改类型</b>
+
+            <input  type="text" class="form-control" style="width:300px;" value ={{thisclassify}} ng-model="thisclassify">
+            <button type="button" class="btn btn-primary"  style="width: 80px;" ng-click="changeWindow_save()"> 保存 </button>
+            <button type="button" class="btn btn-danger" style="margin-left: 50px; width: 80px;"  ng-click="changeWindow_close()">取消</button>
+        </div>
+    </div>
+
+    <div class="unitArea">
+
+        <h3 class="title2">商品单位管理</h3>
+        <p style="position: relative;"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已创建的&nbsp;单位&nbsp;列表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"style="position: relative; left: 120px"  ng-click="addShow2()"></span>
+
+        <span class="glyphicon glyphicon-chevron-down" aria-hidden="true" ng-click="closeTable2()" style="position: relative; left: 135px; top:4px;"></span>
+        </p>
+
+        <table class="table table-hover" id="table2">
+            <thead>
+            </thead>
+            <tbody>
+                <tr ng-repeat="obj in dataset2">
+                    <th><span>{{obj.unitname}}</span><b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-trash" aria-hidden="true" style="color: #c00;" ng-click="deleate2($event)"></span></b></th>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <div class="addWindow2" ng-show="add_condition2";>
+            <b>请填写新增单位</b>
+            <input type="text" class="form-control" style="width:300px;"  ng-model="unit">
+            <button ng-click="addWindow_save2()" type="button" class="btn btn-primary" style="width: 80px;" > 保存 </button>
+            <button type="button" class="btn btn-danger" style="margin-left: 50px; width: 80px;"  ng-click="addWindow_close2()">取消</button>
+        </div>
+
+<!--         <select class="form-control choose">
+            <option ng-repeat="obj in dataset">{{obj.classifyname}}</option>
+
+        </select>
+        <select class="form-control choose2">
+            <option ng-repeat="obj in dataset2">{{obj.unitname}}</option>
+
+        </select> -->
+
+
+    </div>
+    
+            
+
 </div>

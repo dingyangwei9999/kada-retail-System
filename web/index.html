@@ -4,17 +4,39 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/classifypage.css">
+
+	<link rel="stylesheet" type="text/css" href="../libs/bootstrap/css/bootstrap.min.css">
+
+
+	<script src="../libs/jquery/jquery-2.1.1.min.js"></script>
+	<script src="../libs/jquery-confirm/jquery-confirm.js"></script>
 	<script src="../libs/angular/angular.min.js"></script>
+	<script src="../libs/angular/angular.global.js"></script>
     <script src="../libs/angular-ui/angular-ui-router.min.js"></script>
+	<script src="js/classify.js"></script>
+
 </head>
 <body ng-app="myApp">
 	<div class="indexheader">
 		<h3>丢你啊扑街零售系统</h3>
 	</div>
 	<div class="indexbody" >
-		<div class="indexleft">左侧栏
-			<a href="#/classify">商品分类</a>
+		<div class="indexleft" ng-controller = 'leftController'>
+			<span class="glyphicon glyphicon-list" aria-hidden="true" id="openBtn"></span>
 
+			<div class="list_title">功能列表&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-list" aria-hidden="true" ng-click="lefthide()" id="hideBtn"></span></div>
+
+			
+			<ul class="navlist">
+			
+				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>采购管理</a></li>
+				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>商品上架</a></li>
+				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>收银结算</a></li>
+				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>库存管理</a></li>
+				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>供应商管理</a></li>
+				<li><a href="#/classify"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>分类与单位管理</a></li>
+			</ul>
 		</div>
 		<div class="content">
 	    	<div data-ui-view=""></div>
@@ -22,7 +44,20 @@
 	</div>
 
 	<script type="text/javascript">
-		var myApp = angular.module("myApp", ['ui.router']);
+		var myApp = angular.module("myApp", ['ui.router','globalapp','classifyApp']);
+
+		
+		myApp.controller('leftController',['$scope',function($scope){
+			// $('#hideBtn')
+			$scope.lefthide = function(){
+		    	// $scope.add_condition = true;
+		    	// console.log("111111")
+		    	// $('.indexleft').animate({left:'-180px'},'slow');
+		    	// $('#openBtn').stop();
+		    	// $('#openBtn').fadeToggle(200);
+
+		    };
+		}])
         myApp.config(function ($stateProvider, $urlRouterProvider) {
    
        		$stateProvider
@@ -31,15 +66,7 @@
 	               templateUrl: "classify.html?_" + Math.random(),
 	               controller: 'classify'
 	           })
-        });
-        myApp.controller('classify', function ($scope, $stateParams) {
-            $scope.name = 'fdasfdslafdsal';
-            $scope.classify = '';
-			$scope.saveClass = function() {
-				console.log($scope.classify)
-		    };
-
-
+	       
         });
 
 

@@ -1,4 +1,5 @@
 var path = require('path');
+var ProductRouter = require('./ProductRouter');
 
 
 exports.Register = function(express){
@@ -18,7 +19,8 @@ exports.Register = function(express){
     app.get('/', function(request, response){
         response.end();
     })
-
+    ProductRouter.Register(app);
+    
 
     app.use(express.static(path.join(path.resolve(__dirname, '../../'), '/')));
 

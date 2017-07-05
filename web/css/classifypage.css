@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'Glyphicons Halflings'; }
+
+.classifypage .classifyArea .title {
+  color: #2e6da4;
+  padding-left: 30px; }
+
+.classifypage .classifyArea p {
+  margin-top: 40px;
+  padding-left: 60px;
+  font-size: 16px;
+  font-weight: bold; }
+  .classifypage .classifyArea p span {
+    cursor: pointer; }
+
+.classifypage .classifyArea .table-hover {
+  margin-top: 20px; }
+  .classifypage .classifyArea .table-hover th {
+    padding-left: 130px;
+    color: #1ab394;
+    position: relative; }
+    .classifypage .classifyArea .table-hover th b {
+      display: inline-block;
+      position: absolute;
+      left: 400px; }
+      .classifypage .classifyArea .table-hover th b span {
+        cursor: pointer; }
+
+.classifypage .classifyArea .addWindow {
+  background: #fff;
+  position: fixed;
+  left: 400px;
+  top: 200px;
+  width: 500px;
+  padding: 20px 0;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 10px; }
+  .classifypage .classifyArea .addWindow b {
+    font-size: 20px; }
+  .classifypage .classifyArea .addWindow .form-control {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center; }
+
+.classifypage .classifyArea .changeWindow {
+  background: #fff;
+  position: fixed;
+  left: 400px;
+  top: 200px;
+  width: 500px;
+  padding: 20px 0;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 10px; }
+  .classifypage .classifyArea .changeWindow b {
+    font-size: 20px; }
+  .classifypage .classifyArea .changeWindow .form-control {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center; }
+
+.classifypage .unitArea {
+  padding-bottom: 80px; }
+  .classifypage .unitArea .title2 {
+    color: #2e6da4;
+    margin-top: 50px;
+    padding-left: 30px; }
+  .classifypage .unitArea p {
+    margin-top: 40px;
+    padding-left: 60px;
+    font-size: 16px;
+    font-weight: bold; }
+    .classifypage .unitArea p span {
+      cursor: pointer; }
+  .classifypage .unitArea .table-hover {
+    margin-top: 20px; }
+    .classifypage .unitArea .table-hover th {
+      padding-left: 130px;
+      color: #1ab394;
+      position: relative; }
+      .classifypage .unitArea .table-hover th b {
+        display: inline-block;
+        position: absolute;
+        left: 400px; }
+        .classifypage .unitArea .table-hover th b span {
+          cursor: pointer; }
+  .classifypage .unitArea .addWindow2 {
+    background: #fff;
+    position: fixed;
+    left: 400px;
+    top: 200px;
+    width: 500px;
+    padding: 20px 0;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px; }
+    .classifypage .unitArea .addWindow2 b {
+      font-size: 20px; }
+    .classifypage .unitArea .addWindow2 .form-control {
+      margin: 0 auto;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-align: center; }
+  .classifypage .unitArea .changeWindow2 {
+    background: #fff;
+    position: fixed;
+    left: 400px;
+    top: 200px;
+    width: 500px;
+    padding: 20px 0;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px; }
+    .classifypage .unitArea .changeWindow2 b {
+      font-size: 20px; }
+    .classifypage .unitArea .changeWindow2 .form-control {
+      margin: 0 auto;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-align: center; }
+  .classifypage .unitArea .choose, .classifypage .unitArea .choose2 {
+    display: inline-block;
+    width: 200px !important;
+    margin-bottom: 200px;
+    margin-left: 100px; }

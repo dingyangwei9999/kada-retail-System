@@ -82,6 +82,39 @@ a:link {
     width: 180px;
     border-right: solid 1px #ccc;
     text-align: center; }
+    .indexbody .indexleft .navlist li {
+      height: 40px;
+      line-height: 40px;
+      text-align: left;
+      padding-left: 20px;
+      font-size: 14px; }
+      .indexbody .indexleft .navlist li a {
+        text-decoration: none;
+        color: #000; }
+        .indexbody .indexleft .navlist li a span {
+          color: #1ab394;
+          margin-right: 12px;
+          font-size: 16px; }
+    .indexbody .indexleft .navlist li:hover {
+      background-color: #1ab394; }
+      .indexbody .indexleft .navlist li:hover a {
+        color: #fff; }
+        .indexbody .indexleft .navlist li:hover a span {
+          color: #fff; }
+    .indexbody .indexleft #openBtn {
+      position: fixed;
+      left: 17px;
+      top: 20px;
+      font-size: 20px;
+      color: #fff;
+      display: none; }
+    .indexbody .indexleft .list_title {
+      background-color: #428bca;
+      font-size: 18px;
+      padding: 10px 0;
+      color: #fff; }
+      .indexbody .indexleft .list_title span {
+        cursor: pointer; }
   .indexbody .content {
     overflow: auto;
     height: 100%;

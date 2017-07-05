@@ -24,9 +24,64 @@
 		float:left;
 		height: 100%;
 		width: 180px;
+
 		// padding-top:60px;
 		border-right: solid 1px #ccc;
 		text-align:center;
+		.navlist{
+			li{
+				height: 40px;
+				line-height: 40px;
+				text-align: left;
+				padding-left: 20px;
+				font-size: 14px;
+				
+				a{
+					text-decoration: none;
+					color: #000;
+
+					span{
+						color: #1ab394;
+						margin-right: 12px;
+						font-size: 16px;
+
+					}
+
+				}
+			}
+			li:hover{
+				background-color:#1ab394;
+				
+				a{
+					span{
+					color: #fff;
+				}
+					color: #fff;
+				}
+			}
+
+		}
+
+		#openBtn{
+			position:fixed;
+			left: 17px;
+			top: 20px;
+			font-size: 20px;
+			color: #fff;
+			display: none;
+		}	
+		.list_title{
+			background-color:#428bca;
+			// padding:0 !important;
+			font-size: 18px;
+			padding:10px 0;
+			color: #fff;
+			span{
+				cursor: pointer;
+			}
+		}
+
+
 	}
 	.content{
 		overflow: auto;
