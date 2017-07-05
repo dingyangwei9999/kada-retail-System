@@ -96,7 +96,23 @@ var del = function(condition,_callback){
 	});
 }
 
+var existsCode = function(data,_code,_callback){
+	createConnection();
+	connection.connect();
+	var datas = ' SELECT * FROM ' + data + ' WHERE barcode =' + _code
+	connection.query(datas,function(err,result){
+		if (err) {
+			console.log(err)
+		}else{
+			console.log(result)
+			_callback(result)
+		}
+	});
+
+	connection.end();
+};
 exports.exists = exists;
 exports.add = add;
 exports.change = change;
 exports.del = del;
+exports.existsCode = existsCode;

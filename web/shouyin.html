@@ -1,0 +1,116 @@
+<div id="container">
+		<div class="main1">
+			<p class="title">
+				SoEasy收银软件V1.0--收银台
+			</p>
+		</div>
+		<div class="main2 clearfix">
+			<div class="goodsNum">
+				<span>商品编号/条形码：</span>
+				<input type="text" ng-model="num" ng-blur="getGoods(num)">
+				<!-- <i ng-click="getGoods(num)">√</i> -->
+			</div>
+			<div class="guideMsg">
+				<span>导购员：</span>
+				<select  name="guideName" id="guideName">
+					<option>大狗</option>
+					<option>立煌</option>
+					<option>俊宇</option>
+					<option>胡耿</option>
+					<option>阳威</option>
+					<option>蔡颖</option>
+				</select>
+				<p>小票流水号：<span>201707030001</span></p>
+			</div>
+		</div>
+		<div class="main3">
+			<table border="1" rules="all">
+				<thead>
+					<tr>
+						<th>编号</th>
+						<th>条形码</th>
+						<th>商品名称</th>
+						<th>单位</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>生产日期</th>
+						<th>供应商</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in newData">
+						<td ng-bind="$index+1"></td>
+						<td ng-bind="item.barcode"></td>
+						<td ng-bind="item.name"></td>
+						<td ng-bind="item.unit"></td>
+						<td ng-bind="item.rePrice"></td>
+						<td ng-bind="item.quit"></td>
+						<td ng-bind="item.setData"></td>
+						<td ng-bind="item.cata"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="main4 clearfix">
+			<div class="main4_left">
+				<div class="total">
+					<p class="price_info">共：￥<span ng-bind="total"></span></p>
+					<p class="count_info">商品数量：<span ng-bind="count"></span></p>
+				</div>
+				<div class="discount">
+					<p>折扣：￥<span>0.00</span></p>
+				</div>
+			</div>
+			<div class="main4_right">
+				<div class="receivable">
+					<span>应收：</span>
+					<input type="text" disabled ng-model="total">
+					<select name="" id="">
+						<option value=""></option>
+					</select>
+				</div>
+				<div class="gathering">
+					<span>收款：</span>
+					<input ng-change="cashierJie()" type="number" ng-model="shouqian" >
+					<button>打折</button>
+				</div>
+				<div class="change">
+					<span>找零：</span>
+					<input type="text" disabled ng-model="zhao"  value="0.00">
+				</div>
+				<div class="handle">
+					<button ng-click="delData()">结算打印</button>
+					<button>退货</button>
+				</div>
+			</div>
+			<div class="main5 clearfix">
+				<div class="main5_left">
+					<div class="vip">
+						<span>会员卡(Z)：</span>
+						<input type="text">
+						<i>√</i>
+						<b>＋</b>
+					</div>
+					<div class="integral">
+						<span>本次积分(X)：</span>
+						<select name="" id="">
+							<option value=""></option>
+						</select>
+						<button>兑换(C)</button>
+					</div>
+						
+				</div>
+				<div class="main5_right">
+					<button>挂单</button>
+					<button>取单</button>
+					<button>删单</button>
+				</div>
+			</div>
+			<div class="main6">
+				<p>姓名：<span>暂无</span></p>
+				<button>备注</button>
+			</div>
+		</div>
+	</div>
+				
+				

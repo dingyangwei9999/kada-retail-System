@@ -1,0 +1,247 @@
+@import "reset";
+
+$baseColor:#E3EFFF;
+$baseBorder:2px solid #AFCDF2;
+
+#container{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	// min-width:1200px;
+	.main1{
+		width:100%;
+		height:25px;
+		background:$baseColor;
+		border-bottom: $baseBorder;
+		padding:0 20px;
+		.title{
+			font-size: 16px;
+			color:red;
+			line-height: 25px;
+		}
+	}
+	.main2{
+		width:100%;
+		height: 40px;
+		border-bottom:$baseBorder;
+		background:$baseColor;
+		padding:0 20px;
+		.goodsNum{
+			float:left;
+			line-height: 40px;
+			font-size: 18px;
+			position: relative;
+			>input{
+				width:200px;
+				height:25px;
+			}
+			>i{
+				display: block;
+				width:20px;
+				height:25px;
+				text-align: center;
+				line-height: 25px;
+				position:absolute;
+				right:1px;
+				bottom:5px;
+				&:hover{
+					background:orange;
+					opacity: 0.9;
+				}
+				
+			}
+		}
+		.guideMsg{
+			float:right;
+			line-height: 40px;
+			font-size: 18px;
+			select{
+				width:100px;
+				height:25px;
+			}
+			p{
+				display: inline-block;
+				font-size: 18px;
+				margin-left:10px;
+			}
+		}
+	}
+	.main3{
+		width:100%;
+		overflow:scroll;
+		height:400px;
+		padding-top:1px;
+
+		table{
+			width:150%;
+			text-align:center;
+			border-color: #AFCDF2;
+			tr{
+				height:30px;
+				background:$baseColor;
+				color:#15428B;
+			}
+		}
+	}
+	.main4{
+		width:100%;
+		padding-bottom: 50px;
+		overflow:auto; 
+		.main4_left{
+			float:left;
+			width:75%;
+			height:160px;
+			background:#9595EA;
+			border:$baseBorder;
+			// overflow: hidden;
+			.total{
+				width:70%;
+				height:160px;
+				float:left;
+				padding:40px 10px 0;
+				.price_info{
+					font-size: 60px;
+					font-weight: 900;
+				}
+				.count_info{
+					font-size: 30px;
+					font-weight: 900;
+					margin-top:50px;
+				}
+			}
+			.discount{
+				width:30%;
+				float:left;
+				font-size: 25px;
+				color:#15428B;
+				padding:80px 0 0 40px;
+			}
+		}
+		.main4_right{
+			float:left;
+			width:25%;
+			height:160px;
+			background:$baseColor;
+			border:$baseBorder;
+			margin-left:-1px;
+			padding-left:20px;
+			.receivable{
+				width:100%;
+				margin-top:8px;
+				>span{
+					display: inline-block;
+					width:32%;
+					font-size: 25px;
+				}
+				>input{
+					height:30px;
+					width:42%;
+					vertical-align: top;
+					font-size: 16px;
+				}
+				>select{
+					width:20%;
+					height:30px;
+					vertical-align: top;
+				}
+			}
+			.gathering{
+				@extend .receivable;
+				>button{
+					width:20%;
+					height:30px;
+					vertical-align: top;
+					font-size: 16px;
+				}
+			}
+			.change{
+				@extend .receivable;
+			}
+			.handle{
+				margin-top:8px;
+				padding-left:98px;
+				>button:first-child{
+					height:30px;
+					width:64%;
+				}
+				>button:last-child{
+					height:30px;
+					width:30%;
+				}
+			}
+		}
+	}
+	.main5{
+		width:100%;
+		background:$baseColor;
+		padding:5px 15px 5px 10px;
+		.main5_left{
+			float:left;
+			width:50%;
+			.vip{
+				display: inline-block;
+				position:relative;
+				>input{
+					width:200px;
+					height:21px;
+				}
+				i,b{
+					&:hover{
+						background:orange;
+
+					}
+				}
+				>i{
+					display: block;
+					width:16px;
+					height:21px;
+					position:absolute;
+					right:15px;
+					bottom:0;
+				}
+				>b{
+					display: block;
+					height:21px;
+					position:absolute;
+					right:0;
+					bottom:0;
+				}
+
+			}
+			.integral{
+				display: inline-block;
+				>select{
+					width:80px;
+					height:21px;
+				}
+				>button{
+					width:60px;
+					vertical-align: bottom;
+				}
+			}
+			
+		}
+		.main5_right{
+			float:right;
+			width:50%;
+			text-align: right;
+			button{
+				width:60px;
+				vertical-align: bottom;
+			}
+		}
+	}
+	.main6{
+		width:100%;
+		background:$baseColor;
+		padding:5px 15px 5px 10px;
+		>p{
+			display: inline-block;
+			width:94.6%;
+		}
+		>button{
+			width:5%;
+
+		}
+	}
+}

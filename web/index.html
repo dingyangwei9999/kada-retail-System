@@ -4,42 +4,60 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="../libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../libs/jquery/jquery-confirm/jquery-confirm.css">
+
 	<script src="../libs/angular/angular.min.js"></script>
+	<script type="text/javascript" src='../libs/jquery/jquery-2.1.1.min.js'></script>
+	<script type="text/javascript" src='../libs/jquery/jquery-confirm/jquery-confirm.js'></script>
+	<script type="text/javascript" src='../libs/angular/angular.global.js'></script>
     <script src="../libs/angular-ui/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src='js/cashier.js'></script>
+    <script type="text/javascript" src='js/shouyin.js'></script>
+
 </head>
 <body ng-app="myApp">
 	<div class="indexheader">
-		<h3>丢你啊扑街零售系统</h3>
+		<h3>超级大狗头零售系统</h3>
 	</div>
 	<div class="indexbody" >
 		<div class="indexleft">左侧栏
-			<a href="#/classify">商品分类</a>
+			<a href="#/classify">商品分类</a></br>
+			<a href="#/cashier">上架</a>
+			<a href="#/shouyin">收银</a>
 
 		</div>
 		<div class="content">
 	    	<div data-ui-view=""></div>
+
 		</div>
 	</div>
 
 	<script type="text/javascript">
-		var myApp = angular.module("myApp", ['ui.router']);
+		var myApp = angular.module("myApp", ['ui.router','globalapp','cashierApp','shouyinApp']);
         myApp.config(function ($stateProvider, $urlRouterProvider) {
-   
        		$stateProvider
 	           .state("classifyManage", {
 	               url: "/classify",//当 url 为#/pagetab
 	               templateUrl: "classify.html?_" + Math.random(),
 	               controller: 'classify'
 	           })
-        });
+				.state("fdsafdsa", {
+			               url: "/cashier",//当 url 为#/pagetab
+			               templateUrl: "cashier.html?_" + Math.random(),
+			               controller: 'cashier'
+			           })
+				.state("clafdsa",{
+			               url: "/shouyin",//当 url 为#/pagetab
+			               templateUrl: "shouyin.html?_" + Math.random(),
+			               controller: 'shouyin'
+		           })			           	           
+		        })
+				
         myApp.controller('classify', function ($scope, $stateParams) {
             $scope.name = 'fdasfdslafdsal';
             // console.log($stateParams.id);
-        });
-
-        myApp.controller('classifyController',function($scope){
-        	$scope.name = "a";
-        });
+        });   
 	</script>
 </body>
 </html>	

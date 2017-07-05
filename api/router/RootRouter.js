@@ -1,5 +1,5 @@
 var path = require('path');
-
+var cashier_router = require('../module/products.js')
 
 exports.Register = function(express){
     var app = express();
@@ -19,6 +19,7 @@ exports.Register = function(express){
         response.end();
     })
 
+    cashier_router.Register(app)  
 
     app.use(express.static(path.join(path.resolve(__dirname, '../../'), '/')));
 
