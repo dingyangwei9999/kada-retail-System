@@ -10,7 +10,7 @@ var cashier_router = require('../module/products.js')
 var deliveryRouter =require('./deliveryRouter.js')
 var ProductLibRouter = require('./ProductLibRouter.js');
 var supplierRouter = require('./supplierRouter')
-
+var purchasRouter = require('./purchasRouter.js');
 
 exports.Register = function(express){
     var app = express();
@@ -36,11 +36,10 @@ exports.Register = function(express){
     deliveryRouter.Register(app)
     ProductLibRouter.Register(app); 
     supplierRouter.Register(app);
-
+    purchasRouter.Register(app);
 
     app.use(express.static(path.join(path.resolve(__dirname, '../../'), '/')));
 
 
     return app;
 }
-

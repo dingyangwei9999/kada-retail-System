@@ -1,0 +1,101 @@
+.pur_top_left{
+	float: left;
+}
+.pur_top_right{
+	float: right;
+	margin-right:20px;
+	
+		.pur_search{
+			height:34px;
+			width: 204px;
+			border-radius:7px;
+		}
+}
+.pur_top{
+	margin-bottom:10px;
+}
+
+.pur_concent .table{
+		thead{
+		    background: #d5e9ed;
+		    color:#09c;
+			 tr th{
+					text-align: center;
+					font-weight:block;
+			 }
+		}
+
+		td,th{
+	     	border-right:1px solid #ccc;
+	     	text-align: center;
+		}
+		th{
+		  	 cursor:pointer;
+		  	 color:#09c;
+		  	 font-weight:normal;
+		}
+
+	} 
+
+.pur_concent{
+	position: relative;
+	
+		.concent_right{
+			position: absolute;
+			padding:20px;
+			right:0;
+			top:0;
+			width:480px;
+			height:700px;
+			z-index: 99;
+			border: 1px solid #d5e9ed;
+			background: #fff;
+			box-shadow: -6px 0 0 rgba(0,0,0,.1);
+			   .input-group,input{
+			   		height:40px;
+			   		#goodsnum{
+						width:100px;
+					}
+					#goodsunit{
+						width: 100px;
+					    height: 40px;
+					    margin-left: 64px;
+					}
+			   }
+			   .input-group-addon{
+			   		color:#fff;
+			   		
+			   }
+			   .sjsc{
+			   		background: #8c4;
+			   		cursor: pointer;
+			   }
+			   .spbh{
+			   		background: #8bd;
+			   		
+			   		/*height:40px;*/
+			   }
+		}
+
+}
+
+.concent_right{
+	/*display: none;*/
+
+	.buttonbox{
+		width: 100%;
+		text-align: center;
+		 button{
+		 	width:60px;
+		 	height: 40px;
+		 }
+	}
+
+}
+
+.buttonbox{
+	margin-top:100px;
+		.test{
+			width:100px !important;
+		}
+}
