@@ -20,7 +20,7 @@ product.controller('productlibController', ['$scope', '$stateParams','$http', fu
 		obj = angular.toJson(obj);
 		$http({
 			method: 'POST',
-			url: erp.localhost + 'addProducts',
+			url: erp.localhost + 'lhaddProducts',
 			data: {data:obj}
 		}).success(function(response){
 			$.alert(response)
@@ -32,7 +32,8 @@ product.controller('productlibController', ['$scope', '$stateParams','$http', fu
 		$scope.editFromProid = obj.proid;
 		$scope.totalprice = obj.totalprice;
 		console.log(obj.inventory);
-		$('.productShade').toggle();
+		$('.productShade').fadeToggle(200);
+		$('.productShadeBackground').fadeToggle(200);
 	}
 
 	$scope.btnConfirm = function(){
@@ -48,12 +49,14 @@ product.controller('productlibController', ['$scope', '$stateParams','$http', fu
 		}).success(function(response){
 			console.log(response)
 		});	
-		$('.productShade').toggle();		
+		$('.productShade').fadeToggle(200);
+		$('.productShadeBackground').fadeToggle(200);	
 	}
 
 	$scope.closeShade = function(){
 		console.log(111)
-		$('.productShade').toggle()
+		$('.productShade').fadeToggle(200);
+		$('.productShadeBackground').fadeToggle(200);
 	}
 
 	$scope.delData = function(obj){
@@ -61,7 +64,7 @@ product.controller('productlibController', ['$scope', '$stateParams','$http', fu
 		console.log(value)
 		$http({
 			method: 'POST',
-			url: erp.localhost + 'delProducts',
+			url: erp.localhost + 'lhdelProducts',
 			data: {barcode:value}
 		}).success(function(response){
 			$.alert(response)

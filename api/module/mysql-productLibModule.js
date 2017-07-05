@@ -6,7 +6,7 @@ function createConnection(){
 		user: 'root',
 		password: '',
 		port: '3306',
-		database: 'retailSystem'
+		database: 'hlh'
 	});
 	connection.connect();
 }

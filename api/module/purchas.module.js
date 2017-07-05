@@ -8,7 +8,7 @@ function aa(){
 		user: 'root',
 		password: '',
 		port: '3306',
-		database: 'erp'
+		database: 'hlh'
 	});
 }	
 
@@ -41,7 +41,7 @@ var add = function(newData,_callback){
 	aa();
 	// connection.connect();
 	//conditon是,newData也是模拟的数据
-var  condition = 'INSERT INTO purchaseForm(proid,goodstitle,goodstype,goodsnum,goodsunit,buyprice,suppliername,totalprice) VALUES(?,?,?,?,?,?,?,?)';
+var  condition = 'INSERT INTO purchaseform(proid,goodstitle,goodstype,goodsnum,goodsunit,buyprice,suppliername,totalprice) VALUES(?,?,?,?,?,?,?,?)';
 	// var  newData = ['菜鸟工具', 'https://c.runoob.com','23453', 'CN'];
 	//增
 	console.log(newData)

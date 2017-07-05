@@ -7,7 +7,7 @@ function createConnection(){
 		user: 'root',
 		password: '',
 		port: '3306',
-		database: 'resale'
+		database: 'hlh'
 	});
 }
 

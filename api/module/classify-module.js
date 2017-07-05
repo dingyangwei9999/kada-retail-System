@@ -6,7 +6,7 @@ function createConnection(){
 		user: 'root',
 		password: '',
 		port: '3306',
-		database: 'erp'
+		database: 'hlh'
 	});
 	
 }
@@ -17,11 +17,14 @@ var getGoods=function(_collection, _condition, _callback){
     createConnection();
 
     connection.query('SELECT * FROM classify',function(err, results, fields){
+    	console.log(results)
         _callback(results)
     })
 
     connection.end();
-};
+}
+
+
 var getunit=function(_collection, _condition, _callback){
     createConnection();
 

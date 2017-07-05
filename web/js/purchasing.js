@@ -38,7 +38,7 @@ var purApp = angular.module("purApp", ["globalapp"]);
         		}
         		$scope.save = function(){
 
-        			if($scope.num&&$scope.spmc&&$scope.goodstype&&$scope.goodsnum&&$scope.goodsunit&&$scope.buyprice&&$scope.suppliername&&$scope.totalprice){
+        			// if($scope.num&&$scope.spmc&&$scope.goodstype&&$scope.goodsnum&&$scope.goodsunit&&$scope.buyprice&&$scope.suppliername&&$scope.totalprice){
 							var obj = {
 								"proid":$scope.num,
 								"goodstitle":$scope.spmc,
@@ -58,11 +58,12 @@ var purApp = angular.module("purApp", ["globalapp"]);
 		        				}).then(function(response){
 		        					$('input').val('');
 		        					$scope.data = response.data.data;
+                                    $scope.conshows = !$scope.conshows;
 		        				})
 				
-        			}else{
-        				alert('有字段为空');
-        			}
+        			// }else{
+        			// 	alert('有字段为空');
+        			// }
 
         		}
 
@@ -125,7 +126,8 @@ var purApp = angular.module("purApp", ["globalapp"]);
 	        					data:obj,
 	        				}).then(function(response){
 	        					console.log('更改数据',response)
-	        					// $scope.data = response.data.data;
+	        					$scope.data = response.data.data;
+                                $scope.conshows = !$scope.conshows;
 		        			})
 
 

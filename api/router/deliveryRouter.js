@@ -39,7 +39,7 @@ exports.Register = function(app){
 		})
 	})
 
-	 app.post('/delProducts',urlencodedParser,function(request,response){
+	 app.post('/lhdelProducts',urlencodedParser,function(request,response){
 
         let data = request.body;
         console.log(data)

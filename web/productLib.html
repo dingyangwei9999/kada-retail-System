@@ -21,10 +21,11 @@
 </table>
 	<div class="productShade">
 		<div>
-			库存<input type="text" ng-model="editInput">
-			总价<input type="text" ng-model="totalprice">
-			<button ng-click="closeShade()">关闭</button>
-			<button ng-click="btnConfirm()">确定</button>
+			库存<input class="form-control" type="text" ng-model="editInput">
+			总价<input  class="form-control" type="text" ng-model="totalprice">
+			<button class="btn btn-info" ng-click="closeShade()">关闭</button>
+			<button class="btn btn-success" ng-click="btnConfirm()">确定</button>
 			</div>
 	</div>
+	<div class="productShadeBackground"></div>
 </div>

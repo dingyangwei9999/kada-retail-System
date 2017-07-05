@@ -6,7 +6,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 exports.Register = function(app){
 
-    app.post('/fromSupplier',function(request, response){
+    app.post('/fromSupplier', urlencodedParser, function(request, response){
+        console.log('111111')
         let arr = [];
         let hasIt = false;
         let data = 'SELECT * FROM  supplier'
