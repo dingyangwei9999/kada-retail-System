@@ -11,10 +11,10 @@ shouyinApp.controller('shouyin', ['$scope', '$stateParams','$http',function($sco
 		let cashierName = $scope.num;
 		let stateShou = true;
 		($scope.newData||[]).map(function(item,index){
-			if (item.barcode === cashierName){
+			if (item.proid === cashierName){
 				console.log($scope.newData[index].quit)
 			 	$scope.newData[index].quit = Number($scope.newData[index].quit)+1 
-		 		$scope.total =Number($scope.total)+ Number($scope.newData[index].rePrice);
+		 		$scope.total =Number($scope.total)+ Number($scope.newData[index].buyprice);
 		 		// $scope.newQit.push($scope.newData[index].barcode,$scope.newData[index].quit)
 		 		$scope.count++;
 				stateShou=false;
@@ -34,7 +34,7 @@ shouyinApp.controller('shouyin', ['$scope', '$stateParams','$http',function($sco
 				let shuzhi = response.data[0];
 				// $scope.total = shuzhi.rePrice;
 				if(shuzhi){
-					$scope.total = Number($scope.total)+Number(response.data[0].rePrice);
+					$scope.total = Number($scope.total)+Number(response.data[0].buyprice);
 					$scope.newData.push(shuzhi);
 					$scope.num = null;
 					$scope.count++;

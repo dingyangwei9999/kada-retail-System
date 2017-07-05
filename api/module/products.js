@@ -9,12 +9,12 @@ exports.Register = function(app){
 
 	app.post('/Data',urlencodedParser,function(request, response){
 		console.log(111,"===>",request.query.barcode)
-		mysqldagou.existsCode('cashier',request.query.barcode,function(result){
+		mysqldagou.existsCode('purchaseform',request.query.barcode,function(result){
 			response.send(result);
 		})
 	})
 	app.post('/cashierData',urlencodedParser,function(request, response){
-		mysqldagou.exists('cashier',function(result){
+		mysqldagou.exists('purchaseform',function(result){
 			response.send(result);
 		})
 	})
@@ -30,7 +30,7 @@ exports.Register = function(app){
 	        }
 	    })
         console.log('newData',newData) 
-		var condition = 'UPDATE cashier SET cash = ? WHERE barcode = ?';
+		var condition = 'UPDATE purchaseform SET cash = ? WHERE barcode = ?';
 		mysqldagou.change(condition,newData,function(result){
 			response.send(result)
 		})

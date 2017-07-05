@@ -6,7 +6,7 @@ function createConnection(){
 		user: 'root',
 		password: '',
 		port: '3306',
-		database: 'angular'
+		database: 'hlh'
 	});
 
 }
@@ -99,7 +99,7 @@ var del = function(condition,_callback){
 var existsCode = function(data,_code,_callback){
 	createConnection();
 	connection.connect();
-	var datas = ' SELECT * FROM ' + data + ' WHERE barcode =' + _code
+	var datas = ' SELECT * FROM ' + data + ' WHERE proid =' + _code
 	connection.query(datas,function(err,result){
 		if (err) {
 			console.log(err)

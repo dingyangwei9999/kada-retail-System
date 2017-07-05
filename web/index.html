@@ -18,6 +18,7 @@
 	<script src="js/classify.js"></script>
     <script type="text/javascript" src='js/cashier.js'></script>
     <script type="text/javascript" src='js/shouyin.js'></script>
+    <script src="./js/delivery.js"></script>
 
 
 </head>
@@ -34,7 +35,7 @@
 				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>采购管理</a></li>
 				<li><a href="#/cashier"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>商品上架</a></li>
 				<li><a href="#/shouyin"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>收银结算</a></li>
-				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>库存管理</a></li>
+				<li><a href="#/delivery"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>库存管理</a></li>
 				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>供应商管理</a></li>
 				<li><a href="#/classify"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>分类与单位管理</a></li>
 			</ul>
@@ -46,7 +47,7 @@
 	</div>
 
 	<script type="text/javascript">
-		var myApp = angular.module("myApp", ['ui.router','globalapp','cashierApp','classifyApp','shouyinApp']);
+		var myApp = angular.module("myApp", ['ui.router','globalapp','cashierApp','classifyApp','shouyinApp','lhApp']);
 		myApp.controller('leftController',['$scope',function($scope){
 			// $('#hideBtn')
 			$scope.lefthide = function(){
@@ -66,16 +67,21 @@
 	               controller: 'classify'
 	            })
 				.state("fdsafdsa", {
-			               url: "/cashier",//当 url 为#/pagetab
-			               templateUrl: "cashier.html?_" + Math.random(),
-			               controller: 'cashier'
-			           })
-				.state("clafdsa",{
-			               url: "/shouyin",//当 url 为#/pagetab
-			               templateUrl: "shouyin.html?_" + Math.random(),
-			               controller: 'shouyin'
-		           })			           	           
-		        })
+	               url: "/cashier",//当 url 为#/pagetab
+	               templateUrl: "cashier.html?_" + Math.random(),
+	               controller: 'cashier'
+	           	})
+				.state("clafdsadhd",{
+	               url: "/shouyin",//当 url 为#/pagetab
+	               templateUrl: "shouyin.html?_" + Math.random(),
+	               controller: 'shouyin'
+		        })	
+		         .state("clafdsa",{
+	               url: "/delivery",//当 url 为#/pagetab
+	               templateUrl: "delivery.html?_" + Math.random(),
+	               controller: 'lhController'
+		        })		           	           
+		  })
 				 
 	</script>
 </body>
