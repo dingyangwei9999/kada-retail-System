@@ -1,22 +1,25 @@
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: '123456',
-	port: '3306',
-	database: 'retailSystem'
-});
+
+function createConnection(){
+	connection = mysql.createConnection({
+		host: 'localhost',
+		user: 'root',
+		password: '',
+		port: '3306',
+		database: 'resale'
+	});
+}
+
 
 
 //查询表的全部数据
 var exists = function(data,_callback){
 
-	connection.connect();
+	createConnection();
 
 	//data代表查询product表的全部数据的条件,product表示你自己创建的数据表名。
 	//这里的data是暂时写在这里的，方便你们了解，真实的情况需要你们自己从自己的路由那里传入参数进来，具体情况自己动手解决。
-	var data = 'SELECT * FROM ' + product,
 	connection.query(data,function(err,result){
 		if (err) {
 			console.log(err)
@@ -31,13 +34,12 @@ var exists = function(data,_callback){
 
 //添加表的数据
 
-var add = function(condition,newData,_callback){
+var add = function(condition,_callback){
+	createConnection()
+	// var condition = 'INSERT INTO websites(Id,name,url,alexa,country) VALUES(0,?,?,?,?)';
+	// var newData = ['菜鸟工具', 'https://c.runoob.com','23453', 'CN'];
 
-	//conditon是,newData也是模拟的数据
-	var  condition = 'INSERT INTO websites(Id,name,url,alexa,country) VALUES(0,?,?,?,?)';
-	var  newData = ['菜鸟工具', 'https://c.runoob.com','23453', 'CN'];
-	//增
-	connection.query(condition,newData,function (err, result) {
+	connection.query(condition,function (err, result) {
         if(err){
          console.log(err)
          return;
@@ -54,11 +56,11 @@ var add = function(condition,newData,_callback){
 
 var change=function(condition,newData,_callback){
  
-	connection.connect();
+	createConnection();
 
 	 //说明跟上面一样
-	var condition = 'UPDATE websites SET name = ?,url = ? WHERE Id = ?';
-	var newData = ['菜鸟移动站', 'https://m.runoob.com',6];
+	// var condition = 'UPDATE websites SET supplierNumber = ?,supplierName = ?,supplierSpell = ?,supplierContacts= ?,supplierPhone= ?,supplierAdress= ?,supplierRemarks= ? WHERE indexId = ?';
+	// var newData = ['菜鸟移动站', 'https://m.runoob.com',6];
 	//改
 	connection.query(condition,newData,function (err, result) {
 	   if(err){
@@ -77,10 +79,10 @@ var change=function(condition,newData,_callback){
 
 var del = function(condition,_callback){
 
-	connection.connect();
+	createConnection();
 	//说明跟上面的一样
  
-	var condition = 'DELETE FROM websites where id=6';
+	// var condition = 'DELETE FROM websites where id=6';
 	//删
 	connection.query(condition,function (err, result) {
         if(err){

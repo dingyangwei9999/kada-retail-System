@@ -1,5 +1,5 @@
 var path = require('path');
-
+var supplierRouter = require('./supplierRouter')
 
 exports.Register = function(express){
     var app = express();
@@ -19,8 +19,11 @@ exports.Register = function(express){
         response.end();
     })
 
+    
+    supplierRouter.Register(app);
 
     app.use(express.static(path.join(path.resolve(__dirname, '../../'), '/')));
 
     return app;
 }
+
