@@ -1,5 +1,9 @@
 var path = require('path');
+var bodyParser = require('body-parser');
+var db = require('../module/mysql-module.js');
+var apiResult = require('../module/apiResult.module.js');
 
+var ProductLibRouter = require('./ProductLibRouter.js');
 
 exports.Register = function(express){
     var app = express();
@@ -16,11 +20,13 @@ exports.Register = function(express){
     });
 
     app.get('/', function(request, response){
-        response.end();
-    })
+        response.send();
+    });
 
 
     app.use(express.static(path.join(path.resolve(__dirname, '../../'), '/')));
+
+    ProductLibRouter.Register(app);
 
     return app;
 }

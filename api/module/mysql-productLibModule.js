@@ -11,14 +11,13 @@ function createConnection(){
 	connection.connect();
 }
 
+
 //查询表的全部数据
-var exists = function(data,_callback){
+var exists = function(table,_callback){
 
 	createConnection();
 
-	//data代表查询product表的全部数据的条件,product表示你自己创建的数据表名。
-	//这里的data是暂时写在这里的，方便你们了解，真实的情况需要你们自己从自己的路由那里传入参数进来，具体情况自己动手解决。
-	var datasql = 'SELECT * FROM ' + data;
+	var datasql = 'SELECT * FROM ' + table;
 	connection.query(datasql,function(err,result){
 		if (err) {
 			console.log(err)
@@ -33,13 +32,12 @@ var exists = function(data,_callback){
 
 //添加表的数据
 
-var add = function(condition,newData,_callback){
+var add = function(condition,_callback){
+	createConnection()
+	// var condition = 'INSERT INTO websites(Id,name,url,alexa,country) VALUES(0,?,?,?,?)';
+	// var newData = ['菜鸟工具', 'https://c.runoob.com','23453', 'CN'];
 
-	//conditon是,newData也是模拟的数据
-	var  condition = 'INSERT INTO websites(Id,name,url,alexa,country) VALUES(0,?,?,?,?)';
-	var  newData = ['菜鸟工具', 'https://c.runoob.com','23453', 'CN'];
-	//增
-	connection.query(condition,newData,function (err, result) {
+	connection.query(condition,function (err, result) {
         if(err){
          console.log(err)
          return;
@@ -56,7 +54,7 @@ var add = function(condition,newData,_callback){
 
 var change=function(condition,newData,_callback){
  
-	connection.connect();
+	createConnection();
 
 	 //说明跟上面一样
 	var condition = 'UPDATE websites SET name = ?,url = ? WHERE Id = ?';
@@ -79,10 +77,10 @@ var change=function(condition,newData,_callback){
 
 var del = function(condition,_callback){
 
-	connection.connect();
+	createConnection();
 	//说明跟上面的一样
  
-	var condition = 'DELETE FROM websites where id=6';
+	var condition = 'DELETE FROM delivery where barcode='+condition;
 	//删
 	connection.query(condition,function (err, result) {
         if(err){
@@ -95,9 +93,47 @@ var del = function(condition,_callback){
 	});
 }
 
+//查询表的数据 分页
+var existsLimit = function(table, limitM, limitN, _callback){
 
+	createConnection();
+	limitM = limitM || 0;
+	limitN = limitN || 50;
+	var datasql = 'SELECT * FROM ' + table + ' LIMIT ' + limitM + ',' + limitN;
+	connection.query(datasql,function(err,result){
+		if (err) {
+			console.log('[SELECT ERROR] - ',err);
+			return;
+		}else{
+			// console.log(result)
+			_callback(result)
+		}
+	});
+
+	connection.end();
+};
+
+//查询表的数据 条件
+var existsCondition = function(table, key, value, _callback){
+	if(!(key && value)){return ;}
+	createConnection();
+
+	var datasql = 'SELECT * FROM ' + table + ' WHERE `' + key + '` = ' + value;
+	connection.query(datasql,function(err,result){
+		if (err) {
+			console.log('[SELECT ERROR] - ',err);
+			return;
+		}else{
+			_callback(result)
+		}
+	});
+
+	connection.end();
+};
 
 exports.exists = exists;
 exports.add = add;
 exports.change = change;
 exports.del = del;
+exports.existsLimit = existsLimit;
+exports.existsCondition = existsCondition;

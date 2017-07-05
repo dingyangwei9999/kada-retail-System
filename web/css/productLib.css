@@ -1,0 +1,15 @@
+.productlib-box {
+  height: 500px;
+  overflow: auto; }
+  .productlib-box table th, .productlib-box table td {
+    text-align: center; }
+  .productlib-box .productShade {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: none;
+    width: 100px;
+    background-color: #ccc; }
+    .productlib-box .productShade input {
+      width: 100%;
+      display: block; }
