@@ -47,8 +47,8 @@
 			<ul class="navlist">
 			
 				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>采购管理</a></li>
-				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>商品上架</a></li>
-				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>收银结算</a></li>
+				<li><a href="#/cashier"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>商品上架</a></li>
+				<li><a href="#/shouyin"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>收银结算</a></li>
 				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>库存管理</a></li>
 				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>供应商管理</a></li>
 				<li><a href="#/classify"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>分类与单位管理</a></li>
@@ -61,6 +61,7 @@
 	</div>
 
 	<script type="text/javascript">
+		var myApp = angular.module("myApp", ['ui.router','globalapp','cashierApp','classifyApp','shouyinApp']);
 		myApp.controller('leftController',['$scope',function($scope){
 			// $('#hideBtn')
 			$scope.lefthide = function(){
@@ -71,8 +72,7 @@
 		    	// $('#openBtn').fadeToggle(200);
 
 		    };
-		}]
-		var myApp = angular.module("myApp", ['ui.router','globalapp','cashierApp','classifyApp','shouyinApp']);
+		}])
         myApp.config(function ($stateProvider, $urlRouterProvider) {
        		$stateProvider
 	           .state("classifyManage", {
