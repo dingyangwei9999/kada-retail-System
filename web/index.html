@@ -5,6 +5,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/classifypage.css">
+	<link rel="stylesheet" href="css/supplier.css">
 	<link rel="stylesheet" type="text/css" href="../libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../libs/jquery/jquery-confirm/jquery-confirm.css">
 
@@ -21,6 +22,8 @@
     <script type="text/javascript" src='js/shouyin.js'></script>
     <script src="./js/delivery.js"></script>
 	<script type="text/javascript" src="js/productLib.js"></script>
+	<script src="js/supplier.js"></script>
+	
 
 </head>
 <body ng-app="myApp">
@@ -37,7 +40,7 @@
 				<li><a href="#/cashier"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>商品上架</a></li>
 				<li><a href="#/shouyin"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>收银结算</a></li>
 				<li><a href="#/delivery"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>库存管理</a></li>
-				<li><a href=""><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>供应商管理</a></li>
+				<li><a href="#/supplier"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>供应商管理</a></li>
 				<li><a href="#/classify"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>分类与单位管理</a></li>
 			</ul>
 		</div>
@@ -48,7 +51,7 @@
 	</div>
 
 	<script type="text/javascript">
-		var myApp = angular.module("myApp", ['ui.router','globalapp','cashierApp','classifyApp','shouyinApp','lhApp','productLib']);
+		var myApp = angular.module("myApp", ['ui.router','globalapp','cashierApp','classifyApp','shouyinApp','lhApp','productLib','supplier_module']);
 		myApp.controller('leftController',['$scope',function($scope){
 			// $('#hideBtn')
 			$scope.lefthide = function(){
@@ -86,10 +89,14 @@
 	           		url: "/productlib",
 	           		templateUrl: "./productLib.html",
 	           		controller: 'productlibController'
-	           })		           	           
+	            })	
+				.state("supplier",{
+					url:"/supplier",
+					templateUrl:"supplier.html?_" + Math.random(),
+					controller:'supplier'
+				})	           	           
 		  })
 				 
 	</script>
 </body>
 </html>	
-

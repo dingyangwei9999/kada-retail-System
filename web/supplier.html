@@ -1,0 +1,111 @@
+<div class="supplier_container">
+	<div class="supplier_aside">
+		<div class="supplier_asideContainer">
+			<div class="supplier_aside_top">
+				<div>
+					<label for="">供应商编号:</label>
+					<input type="text" ng-model="supplierNumber">
+				</div>
+				<div>
+					<label for="">供应商名称:</label>
+					<input type="text" ng-model="supplierName">
+				</div>
+				<div>
+					<label for="">搜索拼音码:</label>
+					<input type="text" ng-model="supplierSpell">
+				</div>			
+			</div>
+			<div class="supplier_aside_middle">
+				<div>
+					<label for="">供应商联系人:</label>
+					<input type="text" ng-model="supplierContacts">
+				</div>
+				<div>
+					<label for="">供应商联系方式:</label>
+					<input type="text" ng-model="supplierPhone">
+				</div>
+				<div>
+					<label for="">地址:</label>
+					<textarea ng-model="supplierAdress"></textarea>
+				</div>
+				<div>
+					<label for="">备注:</label>
+					<textarea ng-model="supplierRemarks"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="supplier_aside_bottom clearfix">
+			<input type="button" value="保存" class="baocun" ng-click="saveAdd()">
+			<input type="button" value="取消" class="quxiao" ng-click="hideAdd()">
+		</div>
+	</div>
+	<div class="supplier_aside2">
+		<div class="supplier_asideContainer2">
+			<div class="supplier_aside_top2">
+				<div>
+					<label for="">供应商编号:</label>
+					<input type="text" ng-model="supplierNumber2">
+				</div>
+				<div>
+					<label for="">供应商名称:</label>
+					<input type="text" ng-model="supplierName2">
+				</div>
+				<div>
+					<label for="">搜索拼音码:</label>
+					<input type="text" ng-model="supplierSpell2">
+				</div>			
+			</div>
+			<div class="supplier_aside_middle2">
+				<div>
+					<label for="">供应商联系人:</label>
+					<input type="text" ng-model="supplierContacts2">
+				</div>
+				<div>
+					<label for="">供应商联系方式:</label>
+					<input type="text" ng-model="supplierPhone2">
+				</div>
+				<div>
+					<label for="">地址:</label>
+					<textarea ng-model="supplierAdress2"></textarea>
+				</div>
+				<div>
+					<label for="">备注:</label>
+					<textarea ng-model="supplierRemarks2"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="supplier_aside_bottom2 clearfix">
+			<input type="button" value="删除" class="shangchu2" ng-click="delSupplier()">
+			<input type="button" value="保存" class="baocun2" ng-click="alterAdd()">
+			<input type="button" value="取消" class="quxiao2" ng-click="hideAdd2()">
+		</div>
+	</div>
+	<div class="supplier_header">
+		<span ng-click="showAdd()">新增供应商</span>
+		<input type="button" value="查询" id="btn" ng-click="query()">
+		<input type="text" placeholder="查询关键字" ng-model="queryWord" ng-keyup="mykeyup($event)">
+		<!-- <input type="text" value="启用"> -->
+	</div>
+	<table class="table table-hover table-bordered">
+	 	<thead class="supplier_thead">
+			<tr>
+				<th>操作</th>
+				<th ng-repeat="(key, value) in formData[0]" ng-bind="key"></th>
+			</tr>
+		</thead>
+		<tbody class="supplier_tbody">
+			<tr ng-repeat="obj in formData">
+				<th scope="row" ng-click="showAdd2(obj)">编辑</th>
+				<td ng-repeat="(key, value) in obj" ng-bind="value"></td>
+				
+			</tr>
+		</tbody>
+	</table>
+</div>
+						
+
+
+
+
+
+
