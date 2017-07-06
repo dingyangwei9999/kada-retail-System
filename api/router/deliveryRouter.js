@@ -16,7 +16,14 @@ exports.Register = function(app){
 			response.send(result);
 		});
 	});
+	app.post('/userLogin',urlencodedParser,function(request, response){
+		console.log(111)
 
+		db.exists('userInfo',function(result){
+			console.log(result)
+			response.send(result);
+		});
+	});
 	// app.post('/addData',function(request, response){
 	
 	// 	var name = JSON.parse(request.query.data).name
